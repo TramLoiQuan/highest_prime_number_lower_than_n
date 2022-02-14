@@ -1,5 +1,5 @@
 """
-This file uses the sieve of Eratosthenes to generate all prime numbers less than N
+This file is to use the sieve of Eratosthenes to generate all prime numbers less than N
 https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 """
 import numpy as np
