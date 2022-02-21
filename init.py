@@ -7,7 +7,10 @@ import pickle
 import argparse
 ###
 
-def sieve_of_eratosthenes(nmax):
+def sieve_of_eratosthenes(nmax: int) -> np.ndarray:
+	"""
+	Generate all prime numbers less than nmax
+	"""
 	np01 = np.ones(nmax,dtype=np.int8)
 	np01[0],np01[1]=0,0
 	sqrt_n = int(np.sqrt(nmax))
@@ -31,8 +34,8 @@ if __name__ == "__main__":
 	parser.add_argument("-nmax", type=int, required=True)
 	args = parser.parse_args()
 	nmax=args.nmax
-	l01 = sieve_of_eratosthenes(nmax)
-	d01 = {"nmax":nmax, "l01":l01}
+	np02 = sieve_of_eratosthenes(nmax)
+	d01 = {"nmax":nmax, "np02":np02}
 	with open("prime_numbers_less_than_n.pickle", "wb") as picklefile:
 		pickle.dump(d01, picklefile, protocol=4)
     ##
